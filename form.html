@@ -5,21 +5,56 @@
     <title>Title</title>
 </head>
 <body>
-    <h3>Login Uswe</h3>
-    <!-- actin attribute on a form is where youre sending the form (url or specific file) -->
-    <!-- method is the typee of request. we have get and post-->
-    <!-- get method is used for downloading information, we get in search forms -->
-    <!-- post method is used for uploading info, we use post on login forms -->
-    <!-- anchor tag w/ a query string -->
-    <form action="https://hookb.in/v4O52aPj" method="GET" id= "loginForm">
-    <label for="username">username:</label>
-    <input type="text" name="username" id="username" Input your username here">
+    <h1>Register With Us</h1>
+    <hr>
+    <h2>"How did you hear about us!" </h2>
+    <br>
+    <form action="/action_page.php">
+        <select name="cars" size="4" multiple>
+            <option value="billboard">billboard</option>
+            <option value="radio">radio</option>
+            <option value="advertisement">advertisement</option>
+            <option value="internet advertisement">internet advertisement</option>
+            <option value="other">other</option>
+        </select>
+        <br><br>
+    </form>
 
+    <h2>Bio Description</h2>
+
+    <form action="/action_page.php">
+        <textarea name="message" rows="10" cols="30">Give a brief description of yourself.</textarea>
+        <br>
+
+        <br><br>
+
+        <h2>Choose Internet Browser</h2>
+
+        <form action="/action_page.php">
+            <input list="browsers" name="browser">
+            <datalist id="browsers">
+                <option value="Internet Explorer">
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+            </datalist>
+        </form>
+
+        <p>Note: Click menu to select with browser you are using.</p>
+
+    </form>
+
+    <form action="https://hookb.in/v4O52aPj" method="GET" id= "loginForm">
+    <label for="email">email:</label>
+    <input type="text" name="email" id="email" Input your email here">
     <label for="password">password:</label>
     <input type="text"name="password" id="password" placeholder="Input your password here">
 
     <button type="submit"Login</button>
+        <br>
     </form>
+
 </body>
 
 </html>
