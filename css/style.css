@@ -1,3 +1,37 @@
 .fancy-header{
-    color: blue;
+    color: silver;
+}
+
+h1 {
+    text-align: center;
+}
+
+h1, h2, h3 {
+    text-decoration: underline;
+    color: silver;
+}
+
+body {
+    background-color: gold;
+    background-image: url("../image/window.jpg");
+}
+
+ol {
+    list-style-type: circle;
+}
+
+ul {
+    list-style-type: lower-greek;
+}
+
+
+.centered {
+    display: block;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    border: 2px solid silver;
 }
