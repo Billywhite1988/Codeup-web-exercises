@@ -4,29 +4,40 @@
     <title>Floats Example</title>
     <style>
         #container {
-            margin: 50px auto;
-            width: 500px;
-            border: 1px solid #000;
+            background-color: white;
+            min-height: 800px;
+            width: 600px;
+            margin: 0 auto;
+            margin-top: 20px;
             padding: 10px;
+            position: relative;
+
         }
         #box1 {
             background-color: #77AF00; /* greenish */
-            height: 100px;
-            width: 100px;
-            margin: 10px;
+            height: 150px;
+            width: 150px;
+            padding: 10px;
+            margin-bottom: 10px;
+            float: left;
+            position: absolute;
+           top: 200px;
+            left: 20px;
+            position: fixed;
         }
         #box2 {
             background-color: #1969B2; /* blueish */
-            height: 150px;
-            width: 150px;
-            margin: 10px;
+            height: 200px;
+            width: 200px;
+            padding: 10px;
+            float: right;
         }
     </style>
 </head>
 <body>
 <div id="container">
-    <div id="box1"></div>
-    <div id="box2"></div>
+    <div id="box1">box1</div>
+    <div id="box2">box2</div>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
