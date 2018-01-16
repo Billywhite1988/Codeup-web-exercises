@@ -1,95 +1,55 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial;
-            padding: 20px;
-            background: lightgray;
-        }
-
-        /* Header/Blog Title */
-        .header {
-            padding: 20px;
-            font-size: 30px;
-            text-align: left;
-            background: navy;
-            color: white;
-        }
-
-
-        /* Create two unequal columns that floats next to each other */
-        /* Left column */
-        .leftcolumn {
-            float: left;
-            width: 75%;
-        }
-
-        /* Right column */
-        .rightcolumn {
-            float: left;
-            width: 25%;
-            background-color: #f1f1f1;
-            padding-left: 20px;
-        }
-
-        /* Fake image */
-        .fakeimg {
-            background-color: #aaa;
-            width: 100%;
-            padding: 20px;
-        }
-
-        /* Add a card effect for articles */
-        .card {
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        /* Clear floats after the columns */
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-        @media (max-width: 800px) {
-            .leftcolumn, .rightcolumn {
-                width: 100%;
-                padding: 0;
-            }
-        }
-
-        /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-        @media (max-width: 400px) {
-            .topnav a {
-                float: none;
-                width:100%;
-            }
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="facebook.css">
+    <title>facebook</title>
 </head>
 <body>
-
-<div class="header">
-    <h2>facebook</h2>
-</div>
-
-<div class="row">
-    <div class="leftcolumn">
-        <div class="card">
-            <h2>Connect with friends and the <br>world around you on Facebook</h2>
-            <br>
-            <h2>Share what's new</h2>
-            <br>
-            <h2>Find More</h2>
+    <div class="header">
+    <div class="h-1">
+    <h1>facebook</h1>
+        <form class="formh" action="index.html" method="post">
+            <label for="">Email or Phone</label>
+            <label for="">Password</label>
+            <input id=""txtb type="text" name="" value="">
+            <input id=""txtb type="password" name="" value="">
+            <input id="btn" type="button" name="" value="Log In">
+            <a href="a">Forgotten account?</a>
+            </form>
+    </div>
         </div>
 
+    <h2 class="header1">Connect with friends and the <br> world around you on FaceBook.</h2>
+    <div class="img"></div>
+        <div class="pic1">
+            <img src="fb1.png" alt="">
+            <span class="pix1">See photos and updates</span>
+            <span class="pix1a">from friends in News Feed.</span>
+        </div>
+    <div class="pic2">
+        <div class="img1"></div>
+        <img src="fb2.png" alt="">
+        <div class="img1"></div>
+        <span class="pix2">Share what's new </span>
+        <span class="pix2a">in your life on your Timeline. </span>
+        </div>
+    <div class="pic3">
+        <div class="img2"></div>
+        <img src="fb3.png" alt="">
+        <div class="img2"></div>
+            <span class="pix3">Find more</span>
+            <span class="pix3a">of what you're looking for with Facebook Search.</span>
+        </div>
+
+    <div class="header2">
+        <h2 class="head1">Sign Up</h2>
+        <div class="sec">It’s free and always will be.</div>
+    </div>
 
 </body>
+
 </html>
