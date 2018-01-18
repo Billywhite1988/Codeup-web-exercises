@@ -1,0 +1,60 @@
+.container {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.row {
+    width:100%;
+    background-color: lightgray;
+    border: 1px solid black;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+    border: 1px solid black;
+
+}
+
+.column {
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.column {
+    float: left;
+    padding: 10px;
+}
+
+.column.one-third {
+    width: 33.33%;
+
+}
+
+.column.one-half {
+    width: 50%;
+}
+
+.column.one-fourth {
+    width: 25%;
+}
+
+.column.one-sixth {
+    width: 16%;
+}
+
+.column.one-eighth {
+    width: 12%;
+}
+
+@media screen and (max-width: 768px) {
+    .column.one-third,
+    .column.one-half {
+        width: 100%;
+    }
+}
+
