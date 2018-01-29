@@ -107,13 +107,13 @@ function analyzeColor(input) {
     input = input.toLowerCase();
 
 
-    if (input === "blue") {
+    if (input === "Blue") {
         alert("Blue is the color of the sky.");
         message = "Blue is the color of the sky.";
-    } else if (input === "red") {
+    } else if (input === "Red") {
         alert("Strawberries are red.");
         message = "Strawberries are red.";
-    } else if (input === "cyan") {
+    } else if (input === "Cyan") {
         alert("I don't know anything about cyan.");
         message = "I don't know anything about cyan.";
     } else {
@@ -122,11 +122,12 @@ function analyzeColor(input) {
     }
 
     return message;
+
 }
 
-console.log(analyzeColor("blue"));
-console.log(analyzeColor("red"));
-console.log(analyzeColor("cyan"));
+console.log(analyzeColor("Blue"));
+console.log(analyzeColor("Red"));
+console.log(analyzeColor("Cyan"));
 
 
 
@@ -138,23 +139,70 @@ console.log(analyzeColor("cyan"));
 //                  will contain a different color everytime the page loads)
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+
+
 /**
  * TODO:
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message everytime you refresh the page
  */
 
+console.log(randomColor);
+console.log(analyzeColor(randomColor));
+
+
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
 
+function analyzeColor(input) {
+    var message = "Enter a color";
+
+    input = input.toLowerCase();
+
+
+
+    switch(input()) {
+        case "Blue":
+            alert("Awesome blue is my favorite color too!");
+            break;
+        case "Red":
+            alert("Red that color is okay...");
+            break;
+        case "Cyan":
+            alert("Is cyan even a color???");
+            break;
+        default:
+            alert(analyzeColor() + " let's go with Blue!");
+            break;
+
+    }
+
+
+    return message;
+
+}
+
+console.log(randomColor);
+console.log(analyzeColor(randomColor));
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+
+
+
+    var userColor = prompt('Pick a color:');
+    alert(analyzeColor(userColor));
+
+
+
+
 
 /* ########################################################################## */
 
@@ -177,7 +225,52 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+function calculateTotal(luckyNumber, total) {
 
+    // could declare multiple variable with the following syntax...
+    // var discountPercentage, finalOutput;
+
+    var discountPercentage;
+    var finalOutput;
+
+    if (luckyNumber < 0 || luckyNumber > 5) {
+        return "Invalid lucky number given!";
+    }
+
+    discountPercentage = calculatePercentage(luckyNumber);
+    finalOutput = total - (total * discountPercentage);
+
+    return finalOutput;
+
+}
+
+function calculatePercentage(num) {
+
+    var discountPercentage;
+
+    switch(num) {
+        case 0:
+            discountPercentage = 0;
+            break;
+        case 1:
+            discountPercentage = .1;
+            break;
+        case 2:
+            discountPercentage = .25;
+            break;
+        case 3:
+            discountPercentage = .35;
+            break;
+        case 4:
+            discountPercentage = .5;
+            break;
+        case 5:
+            discountPercentage = 1;
+            break;
+    }
+
+    return discountPercentage;
+}
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -187,3 +280,12 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  */
 // Generate a random number between 0 and 6
 // var luckyNumber = Math.floor(Math.random() * 6);
+
+var luckyNumber = Math.floor(Math.random() * 6);
+var totalBill = prompt("Please enter your total bill.");
+
+
+
+alert("Your lucky number is: " + luckyNumber);
+alert("Your total bill before the discount is: " + totalBill);
+alert("Price after discount applied is: " + calculateTotal(luckyNumber, totalBill));
