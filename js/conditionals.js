@@ -197,8 +197,8 @@ console.log(analyzeColor(randomColor));
 
 
 
-    var userColor = prompt('Pick a color:');
-    alert(analyzeColor(userColor));
+var userColor = prompt('Pick a color:');
+alert(analyzeColor(userColor));
 
 
 
@@ -227,8 +227,8 @@ console.log(analyzeColor(randomColor));
  */
 function calculateTotal(luckyNumber, total) {
 
-    // could declare multiple variable with the following syntax...
-    // var discountPercentage, finalOutput;//
+
+
 
     var discountPercentage;
     var finalOutput;
@@ -278,14 +278,14 @@ function calculatePercentage(num) {
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-// Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
-
-var luckyNumber = Math.floor(Math.random() * 6);
-var totalBill = prompt("Please enter your total bill.");
 
 
 
-alert("Your lucky number is: " + luckyNumber);
-alert("Your total bill before the discount is: " + totalBill);
-alert("Price after discount applied is: " + calculateTotal(luckyNumber, totalBill));
+    var luckyNumber = Math.floor(Math.random() * 6);
+    var totalBill = prompt("Please enter your total bill.");
+
+
+
+    alert("Your lucky number is: " + luckyNumber);
+    alert("Your total bill before the discount is: " + totalBill);
+    alert("Price after discount applied is: " + calculateTotal(luckyNumber, totalBill));
