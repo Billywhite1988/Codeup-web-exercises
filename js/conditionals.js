@@ -228,7 +228,7 @@ console.log(analyzeColor(randomColor));
 function calculateTotal(luckyNumber, total) {
 
     // could declare multiple variable with the following syntax...
-    // var discountPercentage, finalOutput;
+    // var discountPercentage, finalOutput;//
 
     var discountPercentage;
     var finalOutput;
