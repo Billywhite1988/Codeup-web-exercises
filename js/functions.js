@@ -81,9 +81,12 @@ function isTwo(numInput) {
  */
 
 
-        function calcuateTip(tipDecimal,totalBill) {
-                return tipDecimal * totalBill;
+        function calculateTip(tipPercentage,totalBill) {
+                return tipPercentage * totalBill;
+
 }
+
+}           console.log(calculateTip(.20,20));
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
@@ -110,3 +113,11 @@ function isTwo(numInput) {
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+    function applyDiscount(price, dicountPercent){
+        var discountAmount = price * discountPercent
+    var finalTotal = price - discountAmount;
+        return finalTotal;
+
+}
+
+
