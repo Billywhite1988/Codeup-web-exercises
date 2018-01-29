@@ -34,9 +34,9 @@ if(userWantsToEnterANumber) {
             alert("ODD!");
         }
 
-        alert("Your number plus 100 is " + (parseFloat(input)) + 100);
+        alert("Your number plus 100 is " + (parseFloat(Numberinput)) + 100);
 
-        if(isNegative(Nmberinput)) {
+        if(isNegative(Numberinput)) {
             alert("Your input is negative");
         } else if(isPositive(Numberinput)) {
             alert("Your input is positive");
@@ -164,7 +164,7 @@ function analyzeColor(input) {
 
 
 
-    switch(input()) {
+    switch(input) {
         case "Blue":
             alert("Awesome blue is my favorite color too!");
             break;
@@ -175,7 +175,7 @@ function analyzeColor(input) {
             alert("Is cyan even a color???");
             break;
         default:
-            alert(analyzeColor() + " let's go with Blue!");
+            message =  " let's go with Blue!";
             break;
 
     }
