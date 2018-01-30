@@ -17,65 +17,42 @@
  */
 
 
-var userWantsToEnterANumber = confirm("Would you like to enter a number?");
-
-if(userWantsToEnterANumber) {
-    // Step 1 Get number from user and store it in a variable
-    // Step 2 Check if that input is a number
-    // Step 3 make sure it is a number,
-    var Numberinput = prompt("Please enter a number!");
-
-    // not not a number == number
-    if(isNumeric(Numberinput)) {
-
-        if(isEven(Numberinput)) {
-            alert("EVEN!");
-        } else {
-            alert("ODD!");
-        }
-
-        alert("Your number plus 100 is " + (parseFloat(Numberinput)) + 100);
-
-        if(isNegative(Numberinput)) {
-            alert("Your input is negative");
-        } else if(isPositive(Numberinput)) {
-            alert("Your input is positive");
-        } else {
-            alert("Your input is neither negative nor positive (0)");
-        }
-
+function isNumeric(input) {
+    if(isNaN(parseFloat(input))) {
+        return false;
     } else {
-        alert("You did not input a number!");
+        return true;
+    }
+}
+var wantsToEnterNumber = confirm("Would you like to enter a number?");
+if(wantsToEnterNumber) {
+    var number = prompt("Please enter a number!");
+    number = parseFloat(number);
+
+    // checks if the input ain't a number
+    if(!isNumeric(number)) {
+        alert("Gotta input a number!");
+    } else {
+
+        if(number % 2 == 0) {
+            alert(number + " is even");
+        } else {
+            alert(number + " is odd");
+        }
+
+        alert(number + " plus 100 is: " + (100 + number));
+
+        if(number < 0) {
+            alert(number + " is negative!");
+        } else if(number > 0) {
+            alert(number + " is positive");
+        } else {
+            alert(number + " is neither positive or negative");
+        }
     }
 
 }
 
-
-// determine if an input is a number
-function isNumeric(input) {
-    return !isNaN(input);
-}
-
-// determine if a number is negative
-function isNegative(input) {
-    return input < 0;
-}
-
-// determine if a number is positive
-function isPositive(input) {
-    return input > 0;
-}
-
-// determine if a number is even
-function isEven(input) {
-    return parseFloat(input) % 2 === 0;
-}
-
-// determine if a number is odd ...
-function isOdd(input) {
-
-    return !isEven(input);
-}
 
 
 
@@ -100,36 +77,34 @@ function isOdd(input) {
  */
 
 
+     function analyzeColor(input) {
+        var message;
 
-function analyzeColor(input) {
-    var message = prompt("Enter a color!");
+        if(input === "blue") {
+             message = "Blue is the color of the sky!";
+         } else if(input === "red") {
+             message = "Roses are red";
+         } else if(input === "orange") {
+             message = "Orange you glad I didn't say banana";
+         } else if(input === "yellow") {
+             message = "Yellow is the color of your cup when you're on the exercise";
+         } else if(input === "green") {
+             message = "grass is green";
+         } else if (input === "indigo") {
+             message = "indigo is the color of blue-jeans";
+         } else if (input === "violet") {
+             message = "violets are violet";
+         } else {
+             message = "I don't know anything about the color " + input;
+         }
 
-    input = input.toLowerCase();
+         return message;
+     }
 
-
-    if (input === "Blue") {
-        alert("Blue is the color of the sky.");
-        message = "Blue is the color of the sky.";
-    } else if (input === "Red") {
-        alert("Strawberries are red.");
-        message = "Strawberries are red.";
-    } else if (input === "Cyan") {
-        alert("I don't know anything about cyan.");
-        message = "I don't know anything about cyan.";
-    } else {
-        alert("Not sure about that color.");
-        message = "Not sure about that color.";
-    }
-
-    return message;
-
-}
-
-console.log(analyzeColor("Blue"));
-console.log(analyzeColor("Red"));
-console.log(analyzeColor("Cyan"));
-
-
+console.log(analyzeColor("red"));
+console.log(analyzeColor("violet"));
+console.log(analyzeColor("papayawhip"));
+console.log(analyzeColor("salmon"));
 
 
 // Don't change the next two lines!
@@ -148,45 +123,46 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message everytime you refresh the page
  */
 
-console.log(randomColor);
-console.log(analyzeColor(randomColor));
 
+    console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
 
-function analyzeColor(input) {
-    var message = "Enter a color";
-
-    input = input.toLowerCase();
-
-
+    function analyzeColor(input) {
+    var message;
 
     switch(input) {
-        case "Blue":
-            alert("Awesome blue is my favorite color too!");
+        case "red":
+            message = "Roses are red";
             break;
-        case "Red":
-            alert("Red that color is okay...");
+        case "orange":
+            message = "Orange you glad I didn't say banana";
             break;
-        case "Cyan":
-            alert("Is cyan even a color???");
+        case "yellow":
+            message = "Gold is yellow, sorta";
+            break;
+        case "green":
+            message = "Grass is green";
+            break;
+        case "blue":
+            message = "Blue is the color of the sky.";
+            break;
+        case "violet":
+            message = "Violets are violet";
+            break;
+        case "indigo":
+            message = "Jeans are indigo";
             break;
         default:
-            message =  " let's go with Blue!";
+            message = "I don't know anything about the color " + input;
             break;
-
     }
-
 
     return message;
 
-}
-
-console.log(randomColor);
-console.log(analyzeColor(randomColor));
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
@@ -195,11 +171,9 @@ console.log(analyzeColor(randomColor));
  */
 
 
-
-
-var userColor = prompt('Pick a color:');
-alert(analyzeColor(userColor));
-
+    var userColorChoice = prompt("Pick a color!");
+    var result = analyzeColor(userColorChoice);
+    console.log(result);
 
 
 
@@ -225,6 +199,9 @@ alert(analyzeColor(userColor));
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+
+
+
 function calculateTotal(luckyNumber, total) {
 
 
@@ -244,33 +221,33 @@ function calculateTotal(luckyNumber, total) {
 
 }
 
-function calculatePercentage(num) {
+    function calculatePercentage(num) {
 
-    var discountPercentage;
+        var discountPercentage;
 
-    switch(num) {
-        case 0:
-            discountPercentage = 0;
-            break;
-        case 1:
-            discountPercentage = .1;
-            break;
-        case 2:
-            discountPercentage = .25;
-            break;
-        case 3:
-            discountPercentage = .35;
-            break;
-        case 4:
-            discountPercentage = .5;
-            break;
-        case 5:
-            discountPercentage = 1;
-            break;
+        switch(num) {
+            case 0:
+                discountPercentage = 0;
+                break;
+            case 1:
+                discountPercentage = .1;
+                break;
+            case 2:
+                discountPercentage = .25;
+                break;
+            case 3:
+                discountPercentage = .35;
+                break;
+            case 4:
+                discountPercentage = .5;
+                break;
+            case 5:
+                discountPercentage = 1;
+                break;
+        }
+
+        return discountPercentage;
     }
-
-    return discountPercentage;
-}
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -281,11 +258,11 @@ function calculatePercentage(num) {
 
 
 
-    var luckyNumber = Math.floor(Math.random() * 6);
-    var totalBill = prompt("Please enter your total bill.");
+var luckyNumber = Math.floor(Math.random() * 6);
+    var total = prompt("How much was the total amount spent?");
+    alert("Your lucky number is " + luckyNumber);
+    alert("Price before the discount is " + total);
+    alert("after the discount, your total is " + calculateTotal(luckyNumber, total));
 
 
 
-    alert("Your lucky number is: " + luckyNumber);
-    alert("Your total bill before the discount is: " + totalBill);
-    alert("Price after discount applied is: " + calculateTotal(luckyNumber, totalBill));
