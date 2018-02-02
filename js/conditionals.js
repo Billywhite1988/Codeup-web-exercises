@@ -16,7 +16,6 @@
  * Can you refactor your code to use functions?
  */
 
-
 function isNumeric(input) {
     if(isNaN(parseFloat(input))) {
         return false;
@@ -53,9 +52,6 @@ if(wantsToEnterNumber) {
 
 }
 
-
-
-
 /* ########################################################################## */
 
 /**
@@ -75,31 +71,29 @@ if(wantsToEnterNumber) {
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
+function analyzeColor(input) {
+    var message;
 
+    if(input === "blue") {
+        message = "Blue is the color of the my shirt!";
+    } else if(input === "red") {
+        message = "Red represent hot";
+    } else if(input === "orange") {
+        message = "Orange is orange";
+    } else if(input === "yellow") {
+        message = "Yellow is the color of the sun";
+    } else if(input === "green") {
+        message = "green like money";
+    } else if (input === "brown") {
+        message = "brown like my eyes";
+    } else if (input === "violet") {
+        message = "aqua like water";
+    } else {
+        message = "I don't know anything about the color " + input;
+    }
 
-     function analyzeColor(input) {
-        var message;
-
-        if(input === "blue") {
-             message = "Blue is the color of the sky!";
-         } else if(input === "red") {
-             message = "Roses are red";
-         } else if(input === "orange") {
-             message = "Orange you glad I didn't say banana";
-         } else if(input === "yellow") {
-             message = "Yellow is the color of your cup when you're on the exercise";
-         } else if(input === "green") {
-             message = "grass is green";
-         } else if (input === "indigo") {
-             message = "indigo is the color of blue-jeans";
-         } else if (input === "violet") {
-             message = "violets are violet";
-         } else {
-             message = "I don't know anything about the color " + input;
-         }
-
-         return message;
-     }
+    return message;
+}
 
 console.log(analyzeColor("red"));
 console.log(analyzeColor("violet"));
@@ -114,24 +108,18 @@ console.log(analyzeColor("salmon"));
 //                  will contain a different color everytime the page loads)
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
-
-
-
 /**
  * TODO:
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message everytime you refresh the page
  */
-
-
-    console.log(analyzeColor(randomColor));
+console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
-
-    function analyzeColor(input) {
+function analyzeColor(input) {
     var message;
 
     switch(input) {
@@ -162,6 +150,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
     }
 
     return message;
+}
 
 /**
  * TODO:
@@ -169,14 +158,10 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
-
-
-    var userColorChoice = prompt("Pick a color!");
-    var result = analyzeColor(userColorChoice);
-    console.log(result);
-
-
-
+// console.log(analyzeColor(prompt("Please tell us your favorite color")));
+var userColorChoice = prompt("Please share your favorite color!");
+var result = analyzeColor(userColorChoice);
+console.log(result);
 
 /* ########################################################################## */
 
@@ -199,55 +184,32 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-
-
-
 function calculateTotal(luckyNumber, total) {
 
-
-
-
-    var discountPercentage;
-    var finalOutput;
-
-    if (luckyNumber < 0 || luckyNumber > 5) {
-        return "Invalid lucky number given!";
+    if(luckyNumber == 0) {
+        return total;
+    } else if(luckyNumber == 1) {
+        return total - (total * .1)
+    } else if(luckyNumber == 2) {
+        return total - (total * .25);
+    } else if(luckyNumber == 3) {
+        return total - (total * .35);
+    } else if(luckyNumber == 4) {
+        return total - total * .5;
+    } else if(luckyNumber == 5) {
+        return total - total * 1;
+    } else {
+        return total;
     }
-
-    discountPercentage = calculatePercentage(luckyNumber);
-    finalOutput = total - (total * discountPercentage);
-
-    return finalOutput;
-
 }
 
-    function calculatePercentage(num) {
+console.log(calculateTotal(1, 500));
+console.log(calculateTotal(2, 200));
+console.log(calculateTotal(3, 300));
+console.log(calculateTotal(4, 100));
+console.log(calculateTotal(5, 1000));
+console.log(calculateTotal(40, 1200));
 
-        var discountPercentage;
-
-        switch(num) {
-            case 0:
-                discountPercentage = 0;
-                break;
-            case 1:
-                discountPercentage = .1;
-                break;
-            case 2:
-                discountPercentage = .25;
-                break;
-            case 3:
-                discountPercentage = .35;
-                break;
-            case 4:
-                discountPercentage = .5;
-                break;
-            case 5:
-                discountPercentage = 1;
-                break;
-        }
-
-        return discountPercentage;
-    }
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -255,14 +217,72 @@ function calculateTotal(luckyNumber, total) {
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-
-
-
+// Generate a random number between 0 and 6
 var luckyNumber = Math.floor(Math.random() * 6);
-    var total = prompt("How much was the total amount spent?");
-    alert("Your lucky number is " + luckyNumber);
-    alert("Price before the discount is " + total);
-    alert("after the discount, your total is " + calculateTotal(luckyNumber, total));
+var total = prompt("How much was the total amount spent?");
+alert("Your lucky number is " + luckyNumber);
+alert("Price before the discount is " + total);
+alert("after the discount, your total is " + calculateTotal(luckyNumber, total));
 
+// Bonus 1.
+// Write a function (or multiple functions) that will return
+// a boolean depending on if the string value passed to it
+// as an argument is the name of a day of the week that starts with a T.
+//     Otherwise, it should return false.
+//     Example: dayOfTheWeekStartsWithT("Monday")     => returns false
+// Example: dayOfTheWeekStartsWithT("Tuesday")     => returns true
+// Example: dayOfTheWeekStartsWithT("Tommy")     => returns false
+function dayOfTheWeekStartsWithT(input) {
+    input = input.toLowerCase();
 
+    if(input === "tuesday" || input === "thursday") {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(dayOfTheWeekStartsWithT("Texas"));
+console.log(dayOfTheWeekStartsWithT("tomorrow"));
+console.log(dayOfTheWeekStartsWithT("TUESDAY"));
+console.log(dayOfTheWeekStartsWithT("Friday"));
 
+function dayOfTheWeekStartsWithT(input) {
+    input = input.toLowerCase();
+    return input == "tuesday" || input == "thursday";
+}
+
+// Bonus 2.
+// Write a function, isValidPassword, that takes in a string argument and returns true or false
+// depending on whether or not all the following conditions are true:
+// 1) Must be 6 characters long (only for the sake of this exercise, NOT a best practice)
+// 2) Contains at least one letter and one number
+// 3) Contains at least one upper and one lower case letter
+// 4) Only comprised of letters and numbers
+// 5) EXTRA BONUS: is not the same forwards and backwards
+function isValidPassword(input) {
+    var lengthIsGood = input.length == 6;
+    var hasAtLeastOneLetter = hasLetter(input);
+    var hasAtLeastOneNumber = hasNumber(input);
+    var hasLowerCaseLetter;
+    var hasUpperCaseLetter;
+    var alphaNumeric;
+
+    return lengthIsGood && hasAtLeastOneLetter && hasAtLeastOneNumber && hasLowerCaseLetter && hasUpperCaseLetter && alphaNumeric;
+}
+
+function hasLetter(input) {
+    input = input.toLowerCase();
+
+    return input.includes("a") || input.includes("b") || input.includes("c") ||
+        input.includes("d") || input.includes("e") || input.includes("f") ||
+        input.includes("g") || input.includes("h");
+}
+
+function hasNumber(input) {
+    input = input.toLowerCase();
+
+    return input.includes(0) || input.includes(1) || input.includes(2) ||
+        input.includes(3) || input.includes(4) || input.includes(5) ||
+        input.includes(6) || input.includes(7) || input.includes(8) ||
+        input.includes(9) || input.includes(0);
+}

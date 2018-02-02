@@ -8,11 +8,12 @@
  * Example
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
-    function sayHello(name) {
-    return " Hello, " + name + "!";
+function sayHello(name) {
+    return "Hello, " + name + "!";
 }
 
-    var name= "codeup";
+console.log(sayHello("Billy"));
+
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -36,7 +37,7 @@
 
     var myName = "Billy";
 
-    console.log(sayHello((myName));
+    console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -86,7 +87,7 @@ function isTwo(numInput) {
 
 }
 
-}           console.log(calculateTip(.20,20));
+          console.log(calculateTip(.20,20));
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
@@ -95,7 +96,7 @@ function isTwo(numInput) {
  */
 
         var totalBill = prompt("What is the total bill?")
-        var tipPercentage = prompt(("What tip percentage will you use?");
+        var tipPercentage = prompt("What tip percentage will you use?");
         var tipDecimal = tipPercentage/ 100;
 
         alert("The amount to tip is: " + calcuateTip(tipDecimal, totalBill));
