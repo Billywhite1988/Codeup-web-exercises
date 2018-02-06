@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Google Maps Ex</title>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+</head>
+<body>
+<div id="map"></div>
+<script>
+
+    // This example displays a marker at the center of restaurant.
+    // When the user clicks the marker, an info window opens.
+
+    function initMap() {
+        var uluru = {lat: 37.0793, lng: 127.0519};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 19,
+            center: uluru
+        });
+
+        var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">SakuSaku Chicken</h1>'+
+            '<div id="bodyContent">'+
+            '<p>Best Chicken South Korea, Osan</p>'+
+            '<p>Attribution: Chicken Joint, <a href="https://www.facebook.com/pages/Saku-Saku-chicken/200881959997349">'+
+            'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+            '(last visited October 22, 2016).</p>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map,
+            title: 'SakuSaku Chicken(SouthKorea)'
+        });
+        marker.addListener('click', function() {
+            infowindow.open(map, marker);
+        });
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpPduPZ3O9cc2ZeCzm7vVPLkvyOyO-324&callback=initMap">
+</script>
+</body>
+</html>
