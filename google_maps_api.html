@@ -6,21 +6,19 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Favorite Restaurant</title>
-
     <style>
         #map {
             height: 500px;
             width: 800px;
         }
+        body {
+            background-image: url('Image/saku.jpg');
+        }
     </style>
-
 </head>
-<body background="Image/saku.jpg">
-
+<body>
 <h1 style="color: gray">Google Map Exercise Map</h1>
-
 <div id="map"></div>
-
 <script>
     function initMap() {
         var uluru = {lat: 37.0793, lng: 127.0519};
@@ -63,7 +61,6 @@
     }
 </script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpPduPZ3O9cc2ZeCzm7vVPLkvyOyO-324&callback=initMap">
-</script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpPduPZ3O9cc2ZeCzm7vVPLkvyOyO-324&callback=initMap"></script>
 </body>
 </html>
