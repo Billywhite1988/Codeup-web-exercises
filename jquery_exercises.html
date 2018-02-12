@@ -17,7 +17,7 @@
 
     <style type="text/css">
         .blueText {
-            color: blue;
+            color: black;
         }
         .box {
             height: 75px;
@@ -32,7 +32,7 @@
 
 <main class="container">
     <h1>jQuery Exercise</h1>
-    <h3 class="blueText">Sub Header</h3>
+    <h1 class="blueText">Sub Header</h1>
     <p class="blueText">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -41,7 +41,8 @@
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
-    <p class="blueText">
+    <h1 class="redText">Sub Header</h1>
+    <p class="redText">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -56,7 +57,7 @@
         <li>Item 3</li>
     </ul>
     <div class="box" id="box"></div>
-    <input type="text" name="" id="inputField">
+    <input type="text" name="" id="inputField" placeholder="hover over box">
 
 </main>
 
@@ -68,10 +69,38 @@
 
 <!-- Custom JS -->
 <script>
-    $(document).ready(function() {
-        "use strict";
-        alert("DOM finished loading");
+
+    $(document).ready(function(){
+        $("h1").click(function(){
+            $("h1").css('background-color', 'blue');
+        });
     });
+    $("p").dblclick(function(){
+        $("p").css('font-size', '18px');
+    });
+    $("li").hover(function(){
+        $("li").css('background-color', 'blue');
+    });
+
+    $('li').hover(
+        function() {
+            $(this).css('background-color', 'silver');
+        },
+        function() {
+            $(this).css('background-color', 'blue');
+        }
+    );
+
+    $('.box').hover(
+        function() {
+            $(this).css('background-color', 'gold');
+        },
+        function() {
+            $(this).css('background-color', 'red');
+        }
+    );
+
+
 
 </script>
 
