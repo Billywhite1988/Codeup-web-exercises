@@ -40,6 +40,24 @@
           background-color: #ddd;
           color: black;
       }
+
+
+      .frame {
+          border: 10px solid brown;
+          height: 250px;
+      }
+      .picture1 {
+          background-image: url("image/Hawaii.jpg");
+          background-size: cover;
+      }
+      .picture2 {
+          background-image: url("image/olympic.jpg");
+          background-size: cover;
+      }
+      .picture3 {
+          background-image: url("image/Mammoth Cave .jpg");
+          background-size: cover;
+      }
     </style>
 </head>
 <body>
@@ -47,6 +65,28 @@
 <main class="container">
 
     <h1 align="center">Japan Mt.Fuji Park</h1>
+
+    <div>
+        <h1>Would you like to sign up for our newsletter? <span itemid="click-x">X</span></h1>
+    </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="myModal">
+        <div class=" modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="text-center">Please Register</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="alert" class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        Would you like to sign up for our newsletter?
+    </div>
+
+    <h1>Top Ten Questions about Mt Fuji Park</h1>
+    <h2 id="register">Please register!</h2>
 
     <dl>
         <dt>Where is Mt.Fuji located?</dt>
@@ -110,10 +150,28 @@
     </ul>
 
     <button id="highlightBtn" class="block">Highlight</button>
+
+    <!-- jQuery Swap Bonus -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="frame picture1"></div>
+            <button id="leftSwapBtn" class="pictureBtn btn btn-warning center-block">Swap</button>
+        </div>
+        <div class="col-md-4">
+            <div class="frame picture2"></div>
+            <button id="middleSwapBtn" class="pictureBtn btn btn-warning center-block">Swap</button>
+        </div>
+        <div class="col-md-4">
+            <div class="frame picture3"></div>
+            <button id="rightSwapBtn" class="pictureBtn btn btn-warning center-block">Swap</button>
+        </div>
+    </div>
 </main>
 
 <!--jquery--->
 <script src="http://code.jquery.com/jquery-2.2.4.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 
 <script>
@@ -122,7 +180,7 @@
     $(document).ready(function() {
         // jquery
         // show toggle answer
-        $('button').click(function () {
+/*        $('button').click(function () {
             $("dd").toggleClass("invisible");
         });
 
@@ -148,10 +206,49 @@
         $('li').click(function() {
             $(this).parent().children().first().css("color", "purple");
         });
+
+        // ==== Swap Bonus
+        $('#leftSwapBtn').click(function() {
+            var oldClass = $(this).prev().attr("class").split(" ")[1];
+            var newClass = $(this).parent().next().children().first().attr("class").split(" ")[1];
+            $(this).prev().attr("class", "frame " + newClass);
+            $(this).parent().next().children().first().attr("class", "frame " + oldClass)
+        });
+        $('#middleSwapBtn').click(function() {
+            var choice = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
+            var frameChoice = (choice) ? $(this).parent().prev() : $(this).parent().next();
+            var oldClass = $(this).prev().attr("class").split(" ")[1];
+            var newClass = frameChoice.children().first().attr("class").split(" ")[1];
+            $(this).prev().attr("class", "frame " + newClass);
+            frameChoice.children().first().attr("class", "frame " + oldClass)
+        });
+        $('#rightSwapBtn').click(function() {
+            var oldClass = $(this).prev().attr("class").split(" ")[1];
+            var newClass = $(this).parent().prev().children().first().attr("class").split(" ")[1];
+            $(this).prev().attr("class", "frame " + newClass);
+            $(this).parent().prev().children().first().attr("class", "frame " + oldClass);*/
+
+            // click X to hide the div containing h1 and span elements
+            $("#click-x").click(function() {
+                $(this).parent().parent().hide();
+            });
+            // click h3 to toggle a slide effect for the unordered list after the clicked h3
+            $("h3").next().hide();
+            $("h3").click(function() {
+                $(this).next().slideToggle();
+            });
+            // fade h2 in after 2 seconds
+            $("#register").hide().delay(2000).fadeIn();
+           /* // BONUSES */
+             /*Fade in the register alert*/
+            $("#alert").hide().delay(2000).fadeIn();
+            /* Pop up modal*/
+            setTimeout(function() {
+                $("#myModal").modal("show");
+            }, 2000);
+        });
 </script>
 
-
-<!-- Bootstrap JS -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
+
 </html>
