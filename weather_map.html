@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather-Map API Mashup</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        .map {
+            background-color: gray;
+            height: 300px;
+            widgh: 500px;
+        }
+    </style>
+</head>
+<body>
+<noscript><h1>Enable JavaScript to use this application.</h1></noscript>
+
+<nav></nav>
+<main class="container">
+    <h1 id="location">Location not yet selected</h1>
+    <div class="weather">
+        <div class="row">
+            <section class="forecast col-md-8">forecast stuff</section>
+            <section class="col-md-4">
+
+                <form class="form-horizontal" action="">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Location</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">lat/long</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                        </div>
+                    </div>
+
+                    <div class="radio">
+                        <label class="radio-inline">
+                            <input type="radio" name="units" value="metric">Metric
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="units" value="imperial" checked>Imperial
+                        </label>
+                    </div>
+
+                    <label for="days">Number of days</label>
+                    <select name="days" id="days" class="form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option selected="selected">3</option>
+                    </select>
+                </form>
+            </section>
+        </div>
+    </div>
+    <br>
+    <section class="map">Map goes here</section>
+</main>
+<footer></footer>
+<!--jquery--->
+<script src="http://code.jquery.com/jquery-2.2.4.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>
+    "use strict";
+
+    $(document).ready(function() {
+        "use strict";
+
+// make event listener for changing units of measurement
+
+// event listener for changing number of days to forecast
+        $("#days").change(function(e) {
+            // use the value from $(e.target).val() to send w/ request options
+
+            options.days = $(e.target).val();
+            getForecast(options)
+        });
+
+// Default Options
+        var options = {
+            "days": 3,
+            "units": "imperial",
+            "lat": 29.426791,
+            "lng": -98.489602
+        };
+
+        function getForecast(options) {
+            $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+                APPID: "a8df453d0094a6356c71e33efe98f000",
+                lat: options.lat,
+                lon: options.lng,
+                units: options.units,
+                cnt: options.days
+
+            }).done(function(data) {
+                console.log(data);
+
+                $("#location").html("<h1>" + data.city.name + "</h1>");
+
+
+            }).fail(function(xhr, status, error) {
+                console.log(status);
+                console.log(error);
+            })
+        }
+
+        getForecast(options);
+
+    });
+</script>
+</body>
+</html>
