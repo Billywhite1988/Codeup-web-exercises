@@ -22,7 +22,7 @@
         .box {
             height: 75px;
             width: 75px;
-            background-color: red;
+            background-color: blue;
         }
     </style>
 
@@ -32,6 +32,7 @@
 
 <main class="container">
     <h1>jQuery Exercise</h1>
+    <hr style="color: black">
     <h1 class="blueText">Sub Header</h1>
     <p class="blueText">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -41,6 +42,7 @@
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
+    <hr style="color: black">
     <h1 class="redText">Sub Header</h1>
     <p class="redText">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -50,25 +52,20 @@
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
-    <hr>
+    <hr style="color: black">
     <ul>
-        <li>Item 1</li>
-        <li id="specialItem">Item 2</li>
-        <li>Item 3</li>
+        <li>javascript</li>
+        <li>css</li>
+        <li>html</li>
     </ul>
+    <hr style="color: black">
     <div class="box" id="box"></div>
-    <input type="text" name="" id="inputField" placeholder="hover over box">
+    <input type="text" name="" id="inputField" placeholder="Hover over box">
 
 </main>
 
-<!-- jQuery Version 2.2.4 -->
-<script type="text/javascript" src="js/jquery-2.2.4.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-<!-- Custom JS -->
 <script>
+<!-- Custom JS -->
 
     $(document).ready(function(){
         $("h1").click(function(){
@@ -78,9 +75,7 @@
     $("p").dblclick(function(){
         $("p").css('font-size', '18px');
     });
-    $("li").hover(function(){
-        $("li").css('background-color', 'blue');
-    });
+
 
     $('li').hover(
         function() {
@@ -93,10 +88,10 @@
 
     $('.box').hover(
         function() {
-            $(this).css('background-color', 'gold');
+            $(this).css('background-color', 'silver');
         },
         function() {
-            $(this).css('background-color', 'red');
+            $(this).css('background-color', 'blue');
         }
     );
 
@@ -104,6 +99,12 @@
 
 </script>
 
+
+<!-- jQuery Version 2.2.4 -->
+<script type="text/javascript" src="js/jquery-2.2.4.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 
 </html>
