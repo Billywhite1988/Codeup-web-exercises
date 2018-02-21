@@ -37,13 +37,24 @@ console.log(custNames);
 
 // PROBLEM 3 - create an array of civil servant customers (teachers and police officers)
 // containing the same properties as the objects on the customers objects
-const newUser = {name: 'Billy', age: 29, occupation: 'Police Officer'};
 
-const newUsers = [].concat(customers, newUser);
+function civil_servant() {
+    return customers.occupation == 'Teacher' || 'Police Officer';
+}
 
-console.log(newUsers);
+const cust = customers.filter(civil_servant);
+
+console.log(cust);
 
 // PROBLEM 4 - determine the average age of customers
+
+const averageAge = customers.reduce((accumulator, person) => {
+    accumulator += person.age;
+    return accumulator;
+
+},0);
+console.log("Customer total age is" + " " + averageAge);
+
 
 //            PROBLEM 1 HINT - use .map()
 //            PROBLEM 2 HINT - use .map()
