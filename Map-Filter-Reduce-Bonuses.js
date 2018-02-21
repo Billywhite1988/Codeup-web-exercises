@@ -21,11 +21,28 @@ const customers = [
 ];
 // PROBLEM 1 - create an array of the first letters of each fruit
 
+
+
+const firstLetter = fruits.map((fruit) => fruit[0]).join('');
+
+
+console.log(firstLetter);
+
 // PROBLEM 2 - create array of user objects based on the customers array
 // of objects (each user object should just have name and age properties)
 
+const custNames = customers.map(customer => 'name:'+ customer.name +" " +'age:'+ customer.age);
+
+console.log(custNames);
+
 // PROBLEM 3 - create an array of civil servant customers (teachers and police officers)
 // containing the same properties as the objects on the customers objects
+const newUser = {name: 'Billy', age: 29, occupation: 'Police Officer'};
+
+const newUsers = [].concat(customers, newUser);
+
+console.log(newUsers);
+
 // PROBLEM 4 - determine the average age of customers
 
 //            PROBLEM 1 HINT - use .map()
