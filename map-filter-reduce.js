@@ -34,8 +34,8 @@ const users = [
 
 //Use .filter to create an array of user objects where each user object has at least 3 languages in the languages array.//
 
-const filteredUsers = users.filter((element) => {
-    return element.languages.length >= 3;
+const filteredUsers = users.filter((user) => {
+    return user.languages.length >= 3;
 });
 console.log(filteredUsers);
 
@@ -44,13 +44,17 @@ console.log(filteredUsers);
 // longer version
 
 
-let arrayOfEmails = users.map(({email}) => email);
-console.log(arrayOfEmails);
+let Emails = users.map(({email}) => email);
+console.log(Emails);
 
+// shorter version
+//const emails = users.map(user => user.email);
+//console.lo(emails);
 
 //Use .reduce to transform the array into an object where the object's keys are ids and the values are objects that represent each user//
 
 const usersObject = users.reduce((accumulator, element) => {
-    return accumulator + element;
+    accumulator[users.id] = element;
+    return accumulator;
 }, {});
 console.log(usersObject);
