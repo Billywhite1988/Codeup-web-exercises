@@ -1,4 +1,4 @@
-
+//Write a function named wait that accepts a number as a parameter, and returns a promise that resolves after the passed number of milliseconds.//
 
 let myFirstPromise = new Promise((resolve, reject) => {
 
@@ -24,11 +24,13 @@ mySecondPromise.then((successMessage) => {
     console.log('You\'ll see this after 3 second'+ successMessage);
 });
 
+//Create a function that accepts a github username, and returns a promise that resolves with the date of the last commit that user made//
+
 const dateOfLastCommit = username => {
     const url = `https://api.github.com/users/${username}/events/public`;
     const options = {
         headers: {
-            'Authorization': 'c107a2dce68e1a16a083c3427fcaabc606dc8e7a'
+            'Authorization': 'token YOUR_TOKEN_HERE'
         }
     };
     return fetch(url, options)
