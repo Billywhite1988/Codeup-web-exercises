@@ -3,7 +3,7 @@
 let myFirstPromise = new Promise((resolve, reject) => {
 
     setTimeout(function wait(){
-        resolve(" " + "Success!");
+        resolve(" " + "Success!!!");
     }, 1000);
 });
 
@@ -15,7 +15,7 @@ myFirstPromise.then((successMessage) => {
 let mySecondPromise = new Promise((resolve, reject) => {
 
     setTimeout(function wait(){
-        resolve(" " + "Success!");
+        resolve(" " + "Success!!!");
     }, 3000);
 });
 
