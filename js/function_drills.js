@@ -93,6 +93,7 @@ function hasVowels(char)
        const result = vowels.indexOf(char) >= 0 ? true : false;
 
         return result;
+
     }
 }
 
