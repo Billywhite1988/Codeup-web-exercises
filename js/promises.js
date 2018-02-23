@@ -27,6 +27,7 @@ mySecondPromise.then((successMessage) => {
 //Create a function that accepts a github username, and returns a promise that resolves with the date of the last commit that user made//
 
 const dateOfLastCommit = username => {
+
     const url = `https://api.github.com/users/${username}/events/public`;
     const options = {
         headers: {
@@ -37,4 +38,5 @@ const dateOfLastCommit = username => {
         .then(response => response.json())
         .then(data => data[0].created_at);
 };
+
 console.log(dateOfLastCommit('Billywhite1988').then(lastCommitDate => console.log(lastCommitDate)));
